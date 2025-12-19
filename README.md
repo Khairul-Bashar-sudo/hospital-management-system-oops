@@ -63,24 +63,25 @@ It uses **role-based access control** to ensure that different users have approp
 Hospital-Management-System-CLI/
 │
 ├── src/
-│ ├── Main.java
-│ ├── Hospital.java
-│ ├── Auth.java
-│ ├── ConsoleColors.java
-│ ├── Person.java
-│ ├── Doctor.java
-│ ├── Patient.java
-│ ├── Appointment.java
-│ ├── Bill.java
+│   ├── Main.java
+│   ├── Hospital.java
+│   ├── Auth.java
+│   ├── ConsoleColors.java
+│   ├── Person.java
+│   ├── Doctor.java
+│   ├── Patient.java
+│   ├── Appointment.java
+│   └── Bill.java
 │
 ├── data/
-│ ├── doctors.txt
-│ ├── patients.txt
-│ ├── appointments.txt
-│ ├── bills.txt
+│   ├── doctors.txt
+│   ├── patients.txt
+│   ├── appointments.txt
+│   └── bills.txt
 │
 ├── README.md
 └── .gitignore
+
 
 ---
 
