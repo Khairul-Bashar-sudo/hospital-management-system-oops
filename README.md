@@ -58,10 +58,10 @@ It uses **role-based access control** to ensure that different users have approp
 
 ---
 
-## 🗂 Project Structure
+## 📂 Project Structure
 
+```text
 Hospital-Management-System-CLI/
-│
 ├── src/
 │   ├── Main.java
 │   ├── Hospital.java
@@ -76,11 +76,13 @@ Hospital-Management-System-CLI/
 ├── data/
 │   ├── doctors.txt
 │   ├── patients.txt
+│   ├── patients.txt
 │   ├── appointments.txt
 │   └── bills.txt
 │
 ├── README.md
 └── .gitignore
+
 ---
 
 ## ▶ How to Run the Project
