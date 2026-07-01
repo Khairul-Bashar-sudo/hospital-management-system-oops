@@ -691,7 +691,7 @@ public class WebApp {
             + "</div>"
             + "<div class=\"detail-row\">"
             + "<span class=\"detail-label\">📅 Appointment Date:</span>"
-            + "<span class=\"detail-value\">" + appointment.getAppointmentDate() + "</span>"
+            + "<span class=\"detail-value\">" + appointment.getDate() + "</span>"
             + "</div>"
             + "<div class=\"detail-row\">"
             + "<span class=\"detail-label\">💰 Consultation Fee:</span>"
@@ -774,7 +774,7 @@ public class WebApp {
                 + "    description: 'Doctor Appointment',"
                 + "    image: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%25%22 y=%2250%25%22 font-size=%2240%22>🏥</text></svg>',"
                 + "    handler: function(response){"
-                + "      window.location.href = '/confirmation?appointmentId=" + appointmentId + "&transactionId=' + response.razorpay_payment_id;\"
+                + "      window.location.href = '/confirmation?appointmentId=" + appointmentId + "&transactionId=' + response.razorpay_payment_id;"
                 + "    },"
                 + "    prefill: {"
                 + "      name: '" + patientName + "',"
@@ -830,7 +830,7 @@ public class WebApp {
                 + "var cardElement = elements.create('card');"
                 + "cardElement.mount('#card-element');"
                 + "function submitPayment() {"
-                + "  window.location.href = '/confirmation?appointmentId=" + appointmentId + "&transactionId=TEST_' + Date.now();\
+                + "  window.location.href = '/confirmation?appointmentId=" + appointmentId + "&transactionId=TEST_' + Date.now();"
                 + "}"
                 + "</script>"
                 + "</body></html>";

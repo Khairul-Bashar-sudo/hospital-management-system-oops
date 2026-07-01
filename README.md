@@ -1,154 +1,480 @@
-# 🏥 Hospital Management System (Web + Payment Enabled)
+# 🏥 Hospital Management System (Web-Based with Authentication & Payment)
 
-A modernized **Hospital Management System** developed in **Java** with **Object-Oriented Programming (OOP)** principles.  
-The project now includes a **web-based booking interface** and a **payment step** for appointments, making it more relevant for real-world hospital workflows.
+A modern **Hospital Management System** developed in **Java** using **Object-Oriented Programming (OOP)** principles. The project has evolved from a traditional CLI application into a **web-based hospital management solution** featuring secure authentication, role-based dashboards, appointment booking, payment simulation, and persistent data storage.
+
+> **Note:** The current version includes a payment simulation workflow and is designed to support integration with real payment gateways such as **Stripe** or **Razorpay** in future releases.
 
 ---
 
 ## 📌 Project Overview
 
-The Hospital Management System allows hospitals to manage:
+The Hospital Management System provides a centralized platform for managing hospital operations through an intuitive web interface.
 
-- Doctors
-- Patients
-- Appointments
-- Bills
+It enables hospital staff to:
 
-It uses **role-based access control** to ensure that different users have appropriate permissions.
+- Manage doctors
+- Manage patients
+- Schedule appointments
+- Generate bills
+- Authenticate users based on roles
+- Process appointment payments (simulation)
+- Maintain records with persistent file storage
+
+The application is built using **Core Java**, **Java HTTP Server**, and **Object-Oriented Programming** concepts.
 
 ---
 
-## 🔐 User Roles & Access
+# ✨ Features
+
+## 🔐 Authentication
+
+- Secure Login System
+- Role-Based Authentication
+- Session Management
+- Logout Functionality
+
+---
+
+## 👨‍💼 Admin
+
+- View Dashboard
+- Manage Doctors
+- View Patients
+- View Appointments
+- Generate Bills
+- Full Administrative Access
+
+---
+
+## 👨‍⚕️ Doctor
+
+- Login to Dashboard
+- View Assigned Patients
+- View Appointments
+- Access Patient Information
+
+---
+
+## 👩‍💼 Receptionist
+
+- Register Patients
+- Book Appointments
+- View Doctors
+- Generate Bills
+- Payment Processing
+
+---
+
+## 📅 Appointment Management
+
+- Patient Registration
+- Doctor Selection
+- Appointment Scheduling
+- Appointment Confirmation
+- Appointment History
+
+---
+
+## 💳 Payment Module
+
+Current Version
+
+- Payment Simulation
+- Stripe Test Mode UI
+- Payment Confirmation
+- Transaction ID Generation
+- Appointment Confirmation after Successful Payment
+
+Future Version
+
+- Stripe Integration
+- Razorpay Integration
+- Online Payment Verification
+- Secure Payment Processing
+
+---
+
+## 💾 Data Management
+
+Persistent storage using text files.
+
+- doctors.txt
+- patients.txt
+- appointments.txt
+- bills.txt
+
+All records remain available even after restarting the application.
+
+---
+
+# 👥 User Roles
 
 | Role | Username | Password | Permissions |
-|----|----|----|----|
-| Admin | admin | 1234 | Full access (Add, View, Delete, Search, Bills) |
-| Doctor | doctor1 | 1111 | View own appointments & patients |
-| Receptionist | reception | 2222 | Add patients, schedule appointments, generate bills |
+|------|----------|----------|-------------|
+| Admin | admin | 1234 | Full System Access |
+| Doctor | doctor1 | 1111 | View Appointments & Patients |
+| Receptionist | reception | 2222 | Register Patients, Book Appointments & Billing |
 
 ---
 
-## 🚀 Features
+# 🖥️ Screenshots
 
-✔ Web-based appointment booking interface  
-✔ Online payment simulation for appointment booking  
-✔ Role-based login system  
-✔ Add, view, search & delete doctors and patients  
-✔ Schedule appointments  
-✔ Generate and view bills  
-✔ Persistent data storage using files  
-✔ OOP-based domain model for doctors, patients, appointments, and bills  
+## 🔐 Login Page
+
+<img src="images/login.png" width="900">
 
 ---
 
-## 🛠 Technologies Used
+## 📊 Admin Dashboard
 
-- **Java (Core Java)**
-- **Object-Oriented Programming**
-  - Inheritance
-  - Polymorphism
-  - Encapsulation
-  - Abstraction
-- **Data Structures**
-  - `ArrayList` for storing records
-- **File Handling**
-  - `File`
-  - `Scanner`
-  - `PrintWriter`
-- **Web Interface**
-  - `HttpServer`
-  - HTML forms for booking
+<img src="images/dashboard.png" width="900">
 
 ---
 
-## 📂 Project Structure
+## 📅 Appointment Booking
 
-```text
-Hospital-Management-System-CLI/
+<img src="images/appointment.png" width="900">
+
+---
+
+## 💳 Payment Page
+
+<img src="images/payment.png" width="900">
+
+---
+
+## ✅ Appointment Confirmation
+
+<img src="images/confirmation.png" width="900">
+
+---
+
+# ⚙️ Technologies Used
+
+### Backend
+
+- Java
+- Core Java
+- Java HTTP Server (`com.sun.net.httpserver.HttpServer`)
+
+### Frontend
+
+- HTML5
+- CSS3
+- JavaScript
+
+### Programming Concepts
+
+- Object-Oriented Programming
+- Inheritance
+- Polymorphism
+- Encapsulation
+- Abstraction
+
+### Data Structures
+
+- ArrayList
+
+### Storage
+
+- File Handling
+- Scanner
+- PrintWriter
+
+---
+
+# 🧠 OOP Design
+
+```
+                   Person (Abstract)
+                   /               \
+                  /                 \
+             Doctor               Patient
+                    \             /
+                     \           /
+                  Appointment
+                        |
+                     Bill
+                        |
+                    Hospital
+```
+
+---
+
+# 🏗️ System Architecture
+
+```
+                    Browser
+                        │
+                        ▼
+               HTTP Request
+                        │
+                        ▼
+             Java HTTP Server
+                        │
+                        ▼
+              Authentication
+                        │
+         ┌──────────────┼──────────────┐
+         ▼              ▼              ▼
+      Admin         Doctor      Receptionist
+         │              │              │
+         └──────────────┼──────────────┘
+                        ▼
+                   Hospital
+                        │
+      ┌─────────────────┼────────────────┐
+      ▼                 ▼                ▼
+  Doctors          Patients       Appointments
+                        │
+                        ▼
+                    Billing
+                        │
+                        ▼
+                 Payment Module
+                        │
+                        ▼
+                 Confirmation Page
+```
+
+---
+
+# 💳 Appointment Workflow
+
+```
+Login
+   │
+   ▼
+Dashboard
+   │
+   ▼
+Book Appointment
+   │
+   ▼
+Select Doctor
+   │
+   ▼
+Choose Date
+   │
+   ▼
+Payment Page
+   │
+   ▼
+Payment Success
+   │
+   ▼
+Appointment Confirmation
+```
+
+---
+
+# 📂 Project Structure
+
+```
+Hospital-Management-System/
+│
 ├── src/
 │   ├── Main.java
+│   ├── WebApp.java
 │   ├── Hospital.java
 │   ├── Auth.java
-│   ├── ConsoleColors.java
 │   ├── Person.java
 │   ├── Doctor.java
 │   ├── Patient.java
 │   ├── Appointment.java
-│   └── Bill.java
+│   ├── Bill.java
+│   └── ConsoleColors.java
 │
 ├── data/
 │   ├── doctors.txt
 │   ├── patients.txt
-│   ├── patients.txt
 │   ├── appointments.txt
 │   └── bills.txt
+│
+├── images/
+│   ├── login.png
+│   ├── dashboard.png
+│   ├── booking.png
+│   ├── payment.png
+│   └── confirmation.png
 │
 ├── README.md
 └── .gitignore
 ```
----
-
-## ▶ How to Run the Project
-### Step 1: Compile the Project
-- javac src/*.java
-
-Step 2: Run the Application
-- java src.Main
-
-Step 3: Open the Browser
-- Visit http://localhost:8080
-- Use the booking form to schedule an appointment and complete the payment step
-
---- 
-
-## 💾 Data Storage
-
-### All data is saved and retrieved using text files:
-
-- doctors.txt
-
-- patients.txt
-
-- appointments.txt
-
-- bills.txt
-
-### This ensures data persistence even after program termination.
-
---- 
-
-## 🧠 OOP Design
-
-- Person → Abstract base class
-
-- Doctor & Patient → Extend Person
-
-- Hospital → Manages all data collections
-
-- Appointment → Links doctor & patient
-
-- Bill → Handles billing details
-
-- Method overriding used for display and data handling
 
 ---
 
-## 💡 Suggested New Features
+# 🚀 Getting Started
 
-- Real payment gateway integration (Stripe / Razorpay / PayPal)
-- Patient login and appointment history
-- Email or SMS reminders
-- Doctor availability calendar
-- Online prescription and medical reports
-- Admin dashboard with analytics
-- Database integration (MySQL)
+## Prerequisites
+
+- Java JDK 17+
+- Git
 
 ---
 
-## 👨‍💻 Author
+## Clone Repository
 
-- Khairul Bashar
-- B.Tech Computer Science Student
-- Hospital Management System – OOP Project
+```bash
+git clone https://github.com/yourusername/Hospital-Management-System.git
+```
 
-- ⭐ This project was developed as part of an academic requirement and demonstrates strong understanding of Java fundamentals and object-oriented design principles.
+---
+
+## Navigate to Project
+
+```bash
+cd Hospital-Management-System
+```
+
+---
+
+## Compile Project
+
+```bash
+javac src/*.java
+```
+
+---
+
+## Run Project
+
+```bash
+java -cp src Main
+```
+
+---
+
+## Open Browser
+
+```
+http://localhost:8080
+```
+
+---
+
+# 🔑 Demo Credentials
+
+## Admin
+
+```
+Username : admin
+Password : 1234
+```
+
+## Doctor
+
+```
+Username : doctor1
+Password : 1111
+```
+
+## Receptionist
+
+```
+Username : reception
+Password : 2222
+```
+
+---
+
+# 💳 Payment Simulation
+
+The project currently implements a secure payment simulation workflow.
+
+### Booking Flow
+
+```
+Patient Registration
+        │
+        ▼
+Doctor Selection
+        │
+        ▼
+Appointment Booking
+        │
+        ▼
+Payment Page
+        │
+        ▼
+Transaction Generated
+        │
+        ▼
+Appointment Confirmed
+```
+
+The payment module currently generates a simulated transaction ID for testing purposes and can be upgraded to support real payment providers.
+
+---
+
+# 🔒 Security Features
+
+- Role-Based Authentication
+- Session Validation
+- Protected Routes
+- Logout Functionality
+- Payment Verification Workflow (Simulation)
+
+---
+
+# 📈 Future Enhancements
+
+- ✅ Stripe Payment Gateway
+- ✅ Razorpay Integration
+- ✅ MySQL Database
+- ✅ Patient Portal
+- ✅ Email Notifications
+- ✅ SMS Appointment Reminder
+- ✅ Doctor Availability Calendar
+- ✅ Medical Reports Upload
+- ✅ Online Prescription
+- ✅ Admin Analytics Dashboard
+- ✅ PDF Bill Generation
+- ✅ JWT Authentication
+- ✅ Password Encryption
+- ✅ REST API Support
+
+---
+
+# 🌟 Project Highlights
+
+- Web-Based Hospital Management System
+- Modern User Interface
+- Role-Based Authentication
+- Multi-Step Appointment Workflow
+- Integrated Payment Simulation
+- Object-Oriented Design
+- Persistent File Storage
+- Responsive Layout
+- Easy to Extend
+- Ready for Real Payment Gateway Integration
+
+---
+
+# 👨‍💻 Author
+
+**Khairul Bashar**
+
+**B.Tech Computer Science**
+
+Hospital Management System Project
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push the branch
+5. Open a Pull Request
+
+---
+
+# ⭐ Support
+
+If you found this project useful, please consider giving it a ⭐ on GitHub.
+
+It helps others discover the project and motivates future improvements.
