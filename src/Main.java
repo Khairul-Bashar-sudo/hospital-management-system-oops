@@ -7,14 +7,14 @@ public class Main {
 
     public static void main(String[] args) {
         hospital.loadAll();
-        showWelcome();
-
-        if (!loginFlow()) {
-            ConsoleColors.printlnError("Login failed. Exiting.");
-            return;
+        ConsoleColors.printlnTitle("Starting City Hospital web portal...");
+        try {
+            WebApp webApp = new WebApp(hospital);
+            webApp.start(8080);
+        } catch (Exception e) {
+            ConsoleColors.printlnError("Failed to start web server: " + e.getMessage());
+            e.printStackTrace();
         }
-
-        mainMenu();
     }
 
     private static void showWelcome() {

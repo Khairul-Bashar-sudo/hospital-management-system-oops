@@ -1,7 +1,7 @@
-# 🏥 Hospital Management System (CLI Based)
+# 🏥 Hospital Management System (Web + Payment Enabled)
 
-A **console-based Hospital Management System** developed using **Java** and **Object-Oriented Programming (OOP)** concepts.  
-This project supports **role-based login**, **file handling**, and **structured data management** using a simple command-line interface.
+A modernized **Hospital Management System** developed in **Java** with **Object-Oriented Programming (OOP)** principles.  
+The project now includes a **web-based booking interface** and a **payment step** for appointments, making it more relevant for real-world hospital workflows.
 
 ---
 
@@ -30,13 +30,14 @@ It uses **role-based access control** to ensure that different users have approp
 
 ## 🚀 Features
 
+✔ Web-based appointment booking interface  
+✔ Online payment simulation for appointment booking  
 ✔ Role-based login system  
 ✔ Add, view, search & delete doctors and patients  
 ✔ Schedule appointments  
 ✔ Generate and view bills  
 ✔ Persistent data storage using files  
-✔ Tabular view for better readability  
-✔ Colorful CLI output  
+✔ OOP-based domain model for doctors, patients, appointments, and bills  
 
 ---
 
@@ -54,7 +55,9 @@ It uses **role-based access control** to ensure that different users have approp
   - `File`
   - `Scanner`
   - `PrintWriter`
-- **CLI Interface**
+- **Web Interface**
+  - `HttpServer`
+  - HTML forms for booking
 
 ---
 
@@ -92,6 +95,10 @@ Hospital-Management-System-CLI/
 Step 2: Run the Application
 - java src.Main
 
+Step 3: Open the Browser
+- Visit http://localhost:8080
+- Use the booking form to schedule an appointment and complete the payment step
+
 --- 
 
 ## 💾 Data Storage
@@ -126,17 +133,15 @@ Step 2: Run the Application
 
 ---
 
-## ▶ Future Enhancements
+## 💡 Suggested New Features
 
-Database integration (MySQL)
-
-GUI using JavaFX or Swing
-
-Password encryption
-
-Multiple doctor accounts
-
-Appointment reminders
+- Real payment gateway integration (Stripe / Razorpay / PayPal)
+- Patient login and appointment history
+- Email or SMS reminders
+- Doctor availability calendar
+- Online prescription and medical reports
+- Admin dashboard with analytics
+- Database integration (MySQL)
 
 ---
 
