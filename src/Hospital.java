@@ -9,10 +9,10 @@ public class Hospital {
     private ArrayList<Bill> bills = new ArrayList<>();
 
     // FILE NAMES
-    private final String DF = "doctors.txt";
-    private final String PF = "patients.txt";
-    private final String AF = "appointments.txt";
-    private final String BF = "bills.txt";
+    private final String DF = "data/doctors.txt";
+    private final String PF = "data/patients.txt";
+    private final String AF = "data/appointments.txt";
+    private final String BF = "data/bills.txt";
 
     // ADD METHODS
     public void addDoctor(Doctor d) { doctors.add(d); saveDoctors(); }
